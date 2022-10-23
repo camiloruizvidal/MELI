@@ -1,7 +1,12 @@
-export interface ISearch {
+export interface IResponseSearch {
     author:     IAuthor;
     categories: string[];
     items:      IItem[];
+}
+
+export interface IResponseDetail {
+    author: IAuthor;
+    item:   IItemDetail;
 }
 
 export interface IAuthor {
@@ -17,6 +22,15 @@ export interface IItem {
     condition:     string;
     free_shipping: boolean;
 }
+
+
+
+export interface IItemDetail extends IItem{
+    sold_quantity: Number;
+    description:   string;
+}
+
+
 
 export interface IPrice {
     currency: string;
