@@ -83,9 +83,14 @@ export default class ItemsController {
             const categoryIndex = response.data.available_filters
                                     .findIndex((item: AvailableFilter) => item.id == 'category')
 
-            const category: string[] = response.data.available_filters[categoryIndex].values
-                                        .map((item: AvailableFilterValue) => item.name)
-                                        .sort();
+            let category: string[] = []
+            if(categoryIndex > -1) {
+
+                category = response.data.available_filters[categoryIndex].values
+                .map((item: AvailableFilterValue) => item.name)
+                .sort();
+
+            }
 
             const search: IResponseSearch = {
                 author: {// TODO No found data in API
