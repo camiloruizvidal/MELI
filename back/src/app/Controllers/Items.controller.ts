@@ -40,13 +40,14 @@ export default class ItemsController {
 
             const resultItems: IItem[] = response.data.results
                                         .map((value: IResultDetail) => {
+                const decimals: number = `${value.price}`.split('.')[1].length;
                 return {
                     id: value.id,
                     title: value.title,
                     price: {
                         currency: value.prices.presentation.display_currency,
                         amount: value.price,
-                        decimals: 2
+                        decimals: decimals
                     },
                     picture: value.thumbnail,
                     condition: value.condition,
