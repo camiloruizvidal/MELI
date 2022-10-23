@@ -40,7 +40,11 @@ export default class ItemsController {
 
             const resultItems: IItem[] = response.data.results
                                         .map((value: IResultDetail) => {
-                const decimals: number = `${value.price}`.split('.')[1].length;
+
+                let decimals: number = `${value.price}`.split('.').length == 2
+                                        ? (`${value.price}`.split('.')[1]).length
+                                        : 0;
+
                 return {
                     id: value.id,
                     title: value.title,
