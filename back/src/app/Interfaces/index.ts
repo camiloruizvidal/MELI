@@ -108,6 +108,7 @@ export interface IResultDetail {
     permalink:             string;
     thumbnail:             string;
     thumbnail_id:          string;
+    pictures:              IResultDetailPicture[];
     accepts_mercadopago:   boolean;
     installments:          Installments;
     address:               IAddress;
@@ -134,6 +135,14 @@ export interface IResultDetail {
     differential_pricing?: DifferentialPricing;
 }
 
+export interface IResultDetailPicture {
+    id: string;
+    url: string;
+    secure_url: string;
+    size: string;
+    max_size: string;
+    quality: string;
+}
 export interface IAddress {
     state_id:   string;
     state_name: string;

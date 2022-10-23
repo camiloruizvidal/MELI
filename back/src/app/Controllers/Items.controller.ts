@@ -18,7 +18,6 @@ export default class ItemsController {
         .then(response => {
             const item: IResultDetail = response[0].data;
             const detail: IResultDescription = response[1].data;
-            const resData = {item:item,detail:detail};
 
 
             let decimals: number = `${item.price}`.split('.').length == 2
@@ -38,7 +37,7 @@ export default class ItemsController {
                         amount: item.price,
                         decimals: decimals
                     },
-                    picture: 'item',
+                    picture: item.pictures[0].url;
                     condition: item.condition,
                     free_shipping: item.shipping.free_shipping,
                     sold_quantity: item.sold_quantity,
