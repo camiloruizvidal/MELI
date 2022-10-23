@@ -1,32 +1,53 @@
-import { AvailableFilterValue } from './../Interfaces/index';
+import { AvailableFilterValue, IResultDescription, IResponseDetail } from './../Interfaces/index';
 import { Request, Response } from 'express';
 import ItemServices from '../Services/Item.services';
-import { AvailableFilter, IResultDetail, IItem, ISearch } from '../Interfaces';
+import { AvailableFilter, IResultDetail, IItem, IResponseSearch } from '../Interfaces';
 
 type Constructor<T> = { new (): T }
 
 export default class ItemsController {
 
-    public static async getDescription(req: Request, res: Response) {
-
-        ItemServices.getDescription(req.params.id)
-        .then(response => {
-            res.json(response.data);
-        })
-        .catch(error => {
-            res.status(404).json(error)
-        })
-
-    }
-
     public static async getItem(req: Request, res: Response) {
 
-        ItemServices.getItem(req.params.id)
+        const id = req.params.id;
+
+        Promise.all([
+            ItemServices.getItem(id),
+            ItemServices.getDescription(id)
+        ])
         .then(response => {
-            res.json(response.data);
-        })
-        .catch(error => {
-            res.status(404).json(error)
+            const item: IResultDetail = response[0].data;
+            const detail: IResultDescription = response[1].data;
+            const resData = {item:item,detail:detail};
+
+
+            let decimals: number = `${item.price}`.split('.').length == 2
+                                    ? (`${item.price}`.split('.')[1]).length
+                                    : 0;
+
+            const itemDetail: IResponseDetail = {
+                author: {// TODO No found data in API
+                    name: 'TODO name',
+                    lastname: 'TODO lastname'
+                },
+                item: {
+                    id: item.id,
+                    title: item.title,
+                    price: {
+                        currency: item.currency_id,
+                        amount: item.price,
+                        decimals: decimals
+                    },
+                    picture: 'item',
+                    condition: item.condition,
+                    free_shipping: item.shipping.free_shipping,
+                    sold_quantity: item.sold_quantity,
+                    description: detail.plain_text
+                }
+            }
+
+            console.log(itemDetail);
+            res.json(itemDetail)
         })
 
     }
@@ -67,7 +88,7 @@ export default class ItemsController {
                                         .map((item: AvailableFilterValue) => item.name)
                                         .sort();
 
-            const search: ISearch = {
+            const search: IResponseSearch = {
                 author: {// TODO No found data in API
                     name: 'TODO name',
                     lastname: 'TODO lastname'
