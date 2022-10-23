@@ -3,8 +3,6 @@ import { Request, Response } from 'express';
 import ItemServices from '../Services/Item.services';
 import { AvailableFilter, IResultDetail, IItem, IResponseSearch } from '../Interfaces';
 
-type Constructor<T> = { new (): T }
-
 export default class ItemsController {
 
     public static async getItem(req: Request, res: Response) {
