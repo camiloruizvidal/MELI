@@ -23,14 +23,10 @@ export interface IItem {
     free_shipping: boolean;
 }
 
-
-
 export interface IItemDetail extends IItem{
     sold_quantity: Number;
     description:   string;
 }
-
-
 
 export interface IPrice {
     currency: string;
