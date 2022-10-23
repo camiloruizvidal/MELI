@@ -37,7 +37,7 @@ export default class ItemsController {
                         amount: item.price,
                         decimals: decimals
                     },
-                    picture: item.pictures[0].url;
+                    picture: item.pictures[0].url,
                     condition: item.condition,
                     free_shipping: item.shipping.free_shipping,
                     sold_quantity: item.sold_quantity,
