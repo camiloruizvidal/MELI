@@ -26,7 +26,7 @@ const Product = () => {
     }, [setItem]);
 
     return (
-        <div>
+        <section className='ui-detail-item'>
             <Card>
                 <Card.Body>
                     <Row>
@@ -50,11 +50,11 @@ const Product = () => {
                     </Row>
                     <Row className='mt-5'>
                         <h2>Descripción del producto</h2>
-                        <p>{item.description}</p>
+                        <p className="mt-4">{item.description}</p>
                     </Row>
                 </Card.Body>
             </Card>
-        </div>
+        </section>
     );
   }
 

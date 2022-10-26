@@ -9,14 +9,21 @@ li {
 }
 
 main {
-  border-collapse: collapse;
-  table-layout: fixed;
+  display: flex;
   margin-top: 50px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  justify-content: space-evenly;
 }
 
 .ui-search-main {
   display: flex;
   justify-content: space-evenly;
+}
+.ui-detail-item {
+  display: flex;
+  justify-content: space-evenly;
+  width: 1200px;
 }
 
 .ui-search-sidebar {
