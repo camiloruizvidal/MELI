@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 
-const SearchItem = (props) => {
+const SearchItemComponent = (props) => {
 	const {
 		id,
 		title,
@@ -36,4 +36,4 @@ const SearchItem = (props) => {
 	)
 }
 
-export default SearchItem
+export default SearchItemComponent
