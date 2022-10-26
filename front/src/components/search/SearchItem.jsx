@@ -1,35 +1,39 @@
 import React from 'react'
+import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 
 const SearchItem = (props) => {
-  const {
-    id,
-    title,
-    //condition,
-    //free_shipping,
-    picture,
-    price
-  } = props.data;
-  return (
-    <Card>
-      <Card.Body>
-        <Card.Text>
-          <a href={"http://localhost:3000/producto/" + id}>
-          <Col xs={2}>
-            <img src={picture} />
-          </Col>
-          <Col xs={10}>
-            <Card.Title>$ {price.amount}</Card.Title>
-            <Card.Subtitle>
-              {title}
-            </Card.Subtitle>
-          </Col>
-          </a>
-        </Card.Text>
-      </Card.Body>
-    </Card>
-  )
+	const {
+		id,
+		title,
+		condition,
+		picture,
+		price
+	} = props.data;
+
+	return (
+		<Card>
+			<Card.Body>
+				<Card.Text>
+					<a href={"http://localhost:3000/producto/" + id}  className='searchItem'>
+						<Row>
+							<Col xs={3}>
+								<img src={picture} className="picture" />
+							</Col>
+							<Col xs={6}>
+								<span className='price'>$ {new Intl.NumberFormat().format(price.amount)}</span>
+								<h2>{title}</h2>
+							</Col>
+							<Col xs={3}>
+								<span className='condition'>{ condition === 'new' ? 'Nuevo' : 'Usado' }</span>
+							</Col>
+						</Row>
+					</a>
+				</Card.Text>
+			</Card.Body>
+		</Card>
+	)
 }
 
 export default SearchItem

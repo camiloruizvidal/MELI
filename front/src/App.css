@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+body {
+  font-family: "Proxima Nova",-apple-system,Roboto,Arial,sans-serif,sans-serif;
+  font-size: 14px;
+  background-color: #ededed;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+  list-style: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main {
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin-top: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ui-search-main {
   display: flex;
+  justify-content: space-evenly;
+}
+
+.ui-search-sidebar {
+  -webkit-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 294px;
+  min-width: 210px;
+  padding-right: 14px;
+  width: 100%;
+}
+
+.ui-search-results {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 885px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+  border-radius: 0;
+  border: var(--bs-card-border-width) solid rgb(0 0 0 / 3%);
 }

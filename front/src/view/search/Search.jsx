@@ -1,42 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router";
-import SearchItem from '../../components/search/SearchItem';
 import { searchItems } from '../../services/Items.services';
+import SearchItem from '../../components/search/SearchItem';
 
 
 const Search = () => {
-    console.log('======SEARCH======');
-    const { query } = useParams();
 
-    const [list, setList] = useState({items:[]});
+	const { query } = useParams();
+	const [ list, setList ] = useState({ items: [] });
 
-    useEffect(() => {
-        searchItems(query)
-        .then((response) =>{
+	useEffect(() => {
+		searchItems(query)
+		.then((response) => {
 
-            setList(response.data)
-        }
-        )
-        .catch((error) =>{
+			setList(response.data)
+		})
+		.catch((error) => {
 
-            console.log(error)
-        }
-        );
-    }, [setList]);
+			console.log(error)
+		});
+	}, [ setList ]);
 
-    return (
-      <div className="App">
-        <div>
-          {list.items.map((item, index) => (
-              <div key={index.toString()}>
-                <SearchItem
-                    data={item}
-                />
-              </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
+	return (
+		<div className="ui-search-main">
+			<section className="ui-search-results">
+				<ol>
+					{list.items.map((item, index) => (
+						<li key={index}>
+							<SearchItem data={item} />
+						</li>
+					))}
+				</ol>
+			</section>
+		</div>
+	);
+}
 
 export default Search;
