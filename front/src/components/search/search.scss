@@ -45,3 +45,17 @@ h2 {
     color: #666;
     font-size: 14px;
 }
+
+.button-search {
+    background-color: white;
+    border: 1px solid #ced4da;
+    background-image: url("./../../../public/images/ic_Search.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+}
+
+.btn:hover,:not(.btn-check)+.btn:active, .btn:focus-visible {
+    background-color: white;
+    border: 1px solid #ced4da;
+}

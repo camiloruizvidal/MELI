@@ -24,6 +24,9 @@ main {
   display: flex;
   justify-content: space-evenly;
   width: 1200px;
+  .card {
+    min-width: 100%;
+  }
 }
 
 .ui-search-sidebar {

@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router";
 import { searchItems } from '../../services/Items.services';
+import { useLocation } from 'react-router-dom';
 import SearchItemComponent from '../../components/search/SearchItemComponent';
 
 
-const Search = () => {
+const SearchView = () => {
 
-	const { query } = useParams();
+	const search = useLocation(). search;
+	const query = new URLSearchParams(search).get("search");
 	const [ list, setList ] = useState({ items: [] });
 
 	useEffect(() => {
@@ -36,4 +38,4 @@ const Search = () => {
 	);
 }
 
-export default Search;
+export default SearchView;

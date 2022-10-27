@@ -16,7 +16,7 @@ const SearchItemComponent = (props) => {
 		<Card>
 			<Card.Body>
 				<Card.Text>
-					<a href={"http://localhost:3000/producto/" + id}  className='searchItem'>
+					<a href={"http://localhost:3000/items/" + id}  className='searchItem'>
 						<Row>
 							<Col xs={3}>
 								<img src={picture} className="picture" />

@@ -8,14 +8,15 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 
-const Product = () => {
+const ProductView = () => {
     const [item, setItem] = useState({id: null,title: null, picture: null, price: { amount: 0}});
     const { id } = useParams();
 
     useEffect(() => {
         getItem(id).then((response) => {
 
-            response.data.item.price.amount = new Intl.NumberFormat().format(response.data.item.price.amount)
+            response.data.item.price.amount = new Intl.NumberFormat()
+                                                .format(response.data.item.price.amount)
             setItem(response.data.item);
             document.title = 'MELI - ' + item.title
 
@@ -50,7 +51,7 @@ const Product = () => {
                     </Row>
                     <Row className='mt-5'>
                         <h2>Descripción del producto</h2>
-                        <p className="mt-4">{item.description}</p>
+                        <div className="mt-4">{item.description}</div>
                     </Row>
                 </Card.Body>
             </Card>
@@ -58,4 +59,4 @@ const Product = () => {
     );
   }
 
-export default Product
+export default ProductView
