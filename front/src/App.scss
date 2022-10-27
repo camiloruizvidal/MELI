@@ -22,8 +22,16 @@ main {
 .ui-search-main {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 16px;
 }
+
+.product-image {
+  padding-right: 8px;
+}
+
+.product-detail {
+  padding-left: 8px;
+}
+
 .ui-detail-item {
   display: flex;
   justify-content: space-evenly;

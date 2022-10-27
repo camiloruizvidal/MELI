@@ -18,10 +18,10 @@ const SearchItemComponent = (props) => {
 				<Card.Text>
 					<a href={"http://localhost:3000/items/" + id}  className='searchItem'>
 						<Row>
-							<Col xs={3}>
+							<Col className='product-image' xs={3}>
 								<img src={picture} className="picture" alt={title}/>
 							</Col>
-							<Col xs={7}>
+							<Col className='product-detail' xs={7}>
 								<span className='price'>$ {new Intl.NumberFormat().format(price.amount)}</span>
 								<h2>{title}</h2>
 							</Col>
