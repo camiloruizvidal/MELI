@@ -19,7 +19,7 @@ const SearchItemComponent = (props) => {
 					<a href={"http://localhost:3000/items/" + id}  className='searchItem'>
 						<Row>
 							<Col xs={3}>
-								<img src={picture} className="picture" />
+								<img src={picture} className="picture" alt={title}/>
 							</Col>
 							<Col xs={6}>
 								<span className='price'>$ {new Intl.NumberFormat().format(price.amount)}</span>

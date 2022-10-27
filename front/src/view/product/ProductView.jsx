@@ -24,7 +24,7 @@ const ProductView = () => {
         .catch((error) => {
             console.log(error)
         });
-    }, [setItem]);
+    });
 
     return (
         <section className='ui-detail-item'>
@@ -32,11 +32,11 @@ const ProductView = () => {
                 <Card.Body>
                     <Row>
                         <Col xs={9}>
-                            <img src={item.picture} />
+                            <img src={item.picture} alt={item.title}/>
                         </Col>
                         <Col xs={3} className="title">
                             <div className='condition'>
-                                {item.condition == 'new' ? 'Nuevo' : 'Usado' }
+                                {item.condition === 'new' ? 'Nuevo' : 'Usado' }
                                 -
                                 {item.sold_quantity} vendidos
                             </div>

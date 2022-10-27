@@ -6,7 +6,7 @@ import SearchItemComponent from '../../components/search/SearchItemComponent';
 
 const SearchView = () => {
 
-	const search = useLocation(). search;
+	const search = useLocation().search;
 	const query = new URLSearchParams(search).get("search");
 	const [ list, setList ] = useState({ items: [] });
 
@@ -20,7 +20,7 @@ const SearchView = () => {
 
 			console.log(error)
 		});
-	}, [ setList ]);
+	});
 
 	return (
 		<div className="ui-search-main">
