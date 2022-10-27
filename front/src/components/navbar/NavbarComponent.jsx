@@ -8,7 +8,7 @@ const NavbarComponent = () => {
   return (
     <Navbar className="navbar">
       <Container>
-        <Navbar.Brand to="/">
+        <Navbar.Brand href="/">
             <Image src = { process.env.PUBLIC_URL +  '/images/Logo_ML.png' }/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

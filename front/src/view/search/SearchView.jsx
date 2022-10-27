@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 
 const SearchView = () => {
-	console.log(new Date())
+
 	const search = useLocation().search;
 	const query = new URLSearchParams(search).get("search");
 	const [ list, setList ] = useState({ items: [] });
@@ -18,7 +18,7 @@ const SearchView = () => {
 			setList(response.data)
 		})
 		.catch((error) => {
-			console.log(error)
+			console.error(error)
 		});
 
 	}, []);

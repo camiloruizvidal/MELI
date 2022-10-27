@@ -11,7 +11,7 @@ const ProductView = () => {
 
     const [item, setItem] = useState({id: null, title: '', picture: null, price: { amount: 0 }});
     const { id } = useParams();
-    console.log(new Date());
+
     useEffect(() => {
 
         getItem(id).then((response) => {
@@ -23,7 +23,7 @@ const ProductView = () => {
 
         })
         .catch((error) => {
-            console.log(error)
+            console.error(error)
         });
 
     }, []);
