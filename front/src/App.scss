@@ -48,12 +48,13 @@ main {
   width: 100%;
 }
 
-.ui-search-results {
+.content-data {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
-  width: 885px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .card {
