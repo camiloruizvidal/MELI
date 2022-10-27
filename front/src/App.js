@@ -1,4 +1,4 @@
-import { Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import './App.scss';
 import BreadcrumbComponent from './components/breadcrumb/BreadcrumbComponent';
 import NavbarComponent from './components/navbar/NavbarComponent';
@@ -9,9 +9,9 @@ function App() {
 		<div className="App">
 			<NavbarComponent />
 			<main className='main'>
-				<div className='row'>
+				<Row>
 					<BreadcrumbComponent />
-					<div className="container-fluid">
+					<Container fluid>
 						<Row>
 							<div className="ui-search-main">
 								<section className="content-data">
@@ -19,8 +19,8 @@ function App() {
 								</section>
 							</div>
 						</Row>
-					</div>
-				</div>
+					</Container>
+				</Row>
 			</main>
 		</div>
 	);
