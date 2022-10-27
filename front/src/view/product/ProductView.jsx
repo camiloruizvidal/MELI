@@ -7,15 +7,15 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-
 const ProductView = () => {
 
     const [item, setItem] = useState({id: null, title: '', picture: null, price: { amount: 0 }});
     const { id } = useParams();
-
+    console.log(new Date());
     useEffect(() => {
 
         getItem(id).then((response) => {
+
             response.data.item.price.amount = new Intl.NumberFormat()
             .format(response.data.item.price.amount)
             setItem(response.data.item);
@@ -26,7 +26,7 @@ const ProductView = () => {
             console.log(error)
         });
 
-    });
+    }, []);
 
     return (
         <section className='ui-detail-item'>
