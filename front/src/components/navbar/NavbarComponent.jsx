@@ -1,7 +1,7 @@
 import './navbar.scss';
 import React from 'react';
 import { Container, Image, Navbar } from 'react-bootstrap';
-import SearchImputComponent from '../search/SearchImputComponent';
+import SearchInputComponent from '../search/SearchInputComponent';
 
 
 const NavbarComponent = () => {
@@ -13,7 +13,7 @@ const NavbarComponent = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-            <SearchImputComponent/>
+            <SearchInputComponent/>
         </Navbar.Collapse>
       </Container>
     </Navbar>

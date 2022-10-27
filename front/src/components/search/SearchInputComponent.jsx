@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-const SearchImputComponent = () => {
+const SearchInputComponent = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -25,7 +25,7 @@ const SearchImputComponent = () => {
 
 
     return (
-        <div className="col-md-6">
+        <div className="col-md-10">
             <InputGroup>
                 <Form.Control
                     placeholder='Nunca dejes de buscar'
@@ -40,4 +40,4 @@ const SearchImputComponent = () => {
     )
 }
 
-export default SearchImputComponent
+export default SearchInputComponent

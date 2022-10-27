@@ -21,11 +21,11 @@ const SearchItemComponent = (props) => {
 							<Col xs={3}>
 								<img src={picture} className="picture" alt={title}/>
 							</Col>
-							<Col xs={6}>
+							<Col xs={7}>
 								<span className='price'>$ {new Intl.NumberFormat().format(price.amount)}</span>
 								<h2>{title}</h2>
 							</Col>
-							<Col xs={3}>
+							<Col xs={2}>
 								<span className='condition'>{ condition === 'new' ? 'Nuevo' : 'Usado' }</span>
 							</Col>
 						</Row>

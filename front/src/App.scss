@@ -10,15 +10,19 @@ li {
 
 main {
   display: flex;
-  margin-top: 50px;
   table-layout: fixed;
   border-collapse: collapse;
   justify-content: space-evenly;
 }
 
+.breadcrumb {
+  padding-top: 16px;
+}
+
 .ui-search-main {
   display: flex;
   justify-content: space-evenly;
+  padding-top: 16px;
 }
 .ui-detail-item {
   display: flex;
