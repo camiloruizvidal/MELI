@@ -9,14 +9,15 @@ import Row from 'react-bootstrap/Row';
 
 
 const ProductView = () => {
-    const [item, setItem] = useState({id: null,title: null, picture: null, price: { amount: 0}});
+
+    const [item, setItem] = useState({id: null, title: '', picture: null, price: { amount: 0 }});
     const { id } = useParams();
 
     useEffect(() => {
-        getItem(id).then((response) => {
 
+        getItem(id).then((response) => {
             response.data.item.price.amount = new Intl.NumberFormat()
-                                                .format(response.data.item.price.amount)
+            .format(response.data.item.price.amount)
             setItem(response.data.item);
             document.title = 'MELI - ' + item.title
 
@@ -24,6 +25,7 @@ const ProductView = () => {
         .catch((error) => {
             console.log(error)
         });
+
     });
 
     return (

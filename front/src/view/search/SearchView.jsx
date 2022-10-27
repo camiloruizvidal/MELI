@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { searchItems } from '../../services/Items.services';
 import { useLocation } from 'react-router-dom';
 import SearchItemComponent from '../../components/search/SearchItemComponent';
@@ -10,16 +10,14 @@ const SearchView = () => {
 	const query = new URLSearchParams(search).get("search");
 	const [ list, setList ] = useState({ items: [] });
 
-	useEffect(() => {
-		searchItems(query)
-		.then((response) => {
+	searchItems(query)
+	.then((response) => {
 
-			setList(response.data)
-		})
-		.catch((error) => {
+		setList(response.data)
+	})
+	.catch((error) => {
 
-			console.log(error)
-		});
+		console.log(error)
 	});
 
 	return (
