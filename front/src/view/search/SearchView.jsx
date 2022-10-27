@@ -28,7 +28,7 @@ const SearchView = () => {
 		<ol className='items-products'>
 			{list.items.map((item, index) => (
 				<li key={index}>
-					<SearchItemComponent data={item} />
+					<SearchItemComponent data={{item:item,index:index}} />
 				</li>
 			))}
 		</ol>

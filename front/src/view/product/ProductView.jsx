@@ -16,7 +16,7 @@ const ProductView = () => {
 
         getItem(id).then((response) => {
 
-            response.data.item.price.amount = new Intl.NumberFormat()
+            response.data.item.price.amount = new Intl.NumberFormat("es-CO")
                 .format(response.data.item.price.amount)
             setItem(response.data.item);
             document.title = 'MELI - ' + item.title
