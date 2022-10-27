@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from "react-router";
 import { searchItems } from '../../services/Items.services';
 import { useLocation } from 'react-router-dom';
 import SearchItemComponent from '../../components/search/SearchItemComponent';
