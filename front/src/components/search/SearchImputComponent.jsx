@@ -10,7 +10,6 @@ const SearchImputComponent = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleChange = (event) => {
-        console.log(event)
         setSearchTerm(event.target.value);
     }
 
