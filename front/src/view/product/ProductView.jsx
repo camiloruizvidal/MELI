@@ -33,17 +33,6 @@ const ProductView = () => {
         <div className="container-fluid">
             <Row>
                 <div className="col-md-12">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            <li class="breadcrumb-item"><a href="#">Categoría</a></li>
-                            <li class="breadcrumb-item active">Página actual</li>
-                        </ol>
-                    </nav>
-                </div>
-            </Row>
-            <Row>
-                <div className="col-md-12">
                     <section className='ui-detail-item'>
                         <Card>
                             <Card.Body>
@@ -52,23 +41,23 @@ const ProductView = () => {
                                         <img className='imageProduct' src={item.picture} alt={item.title}/>
                                     </Col>
                                     <Col xs={3} className="title">
-                                        <div className='condition'>
+                                        <div className='product-condition'>
                                             {item.condition === 'new' ? 'Nuevo' : 'Usado' }
                                             -
                                             {item.sold_quantity} vendidos
                                         </div>
-                                        <div className='name'>{item.title}</div>
-                                        <span className='price'>
+                                        <div className='product-name'>{item.title}</div>
+                                        <div className='product-price'>
                                             $ {item.price.amount}
-                                        </span>
-                                        <div className="d-grid mt-5">
-                                            <Button size="lg" variant="primary">Comprar</Button>
+                                        </div>
+                                        <div className="d-grid">
+                                            <Button size="lg" className='btn-buy' variant="primary">Comprar</Button>
                                         </div>
                                     </Col>
                                 </Row>
                                 <Row className='mt-5'>
-                                    <h2>Descripción del producto</h2>
-                                    <div className="mt-4">{item.description}</div>
+                                    <span className='description-title'>Descripción del producto</span>
+                                    <div className='description-product'>{item.description}</div>
                                 </Row>
                             </Card.Body>
                         </Card>

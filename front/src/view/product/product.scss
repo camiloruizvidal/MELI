@@ -1,13 +1,22 @@
 .title{
-    .price{
-        font-size: 40px;
+    .product-price{
+        font-size: 46px;
     }
-    .condition {
-        font-size: small;
-        font-style: oblique;
+    .product-condition {
+        font-size: 14px;
+        padding-bottom: 16px;
+        padding-top: 16px;
     }
-    .name {
+    .product-name {
         font-weight: bold;
         font-size: 20px;
+        margin-bottom: 32px;
     }
+    .d-grid {
+        padding-top: 32px;
+    }
+}
+
+.btn-buy {
+    margin-right: 32px;
 }

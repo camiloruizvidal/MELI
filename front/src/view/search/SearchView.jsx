@@ -27,17 +27,6 @@ const SearchView = () => {
 	return (
 		<div className='container-fluid'>
 			<Row>
-				<div className="col-md-12">
-					<nav aria-label="breadcrumb">
-						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#">Inicio</a></li>
-							<li class="breadcrumb-item"><a href="#">Categoría</a></li>
-							<li class="breadcrumb-item active">Página actual</li>
-						</ol>
-					</nav>
-				</div>
-			</Row>
-			<Row>
 				<div className="ui-search-main">
 					<section className="ui-search-results">
 						<ol>
