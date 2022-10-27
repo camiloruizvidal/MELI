@@ -1,4 +1,4 @@
-import './search.scss'
+import './searchView.scss'
 import React, { useState, useEffect } from 'react'
 import { searchItems } from '../../services/Items.services';
 import { useLocation } from 'react-router-dom';

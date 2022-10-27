@@ -1,4 +1,4 @@
-import './product.scss'
+import './productView.scss'
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router";
 import { getItem } from '../../services/Items.services';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './search.scss'
+import './searchComponent.scss'
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';

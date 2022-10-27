@@ -23,9 +23,10 @@ a, a:hover {
     color: #333;
 }
 
-.description-product, .description-title {
-    padding-left: 32px;
+.description-product {
     font-size: 16px;
+    padding-left: 32px;
+    padding-bottom: 32px;
 }
 
 .btn-buy {
@@ -34,7 +35,8 @@ a, a:hover {
 }
 
 .description-title {
-    font-size: 18px;
+    font-size: 28px;
+    padding-left: 32px;
     padding-bottom: 32px;
 }
 
@@ -68,7 +70,7 @@ a, a:hover {
     width: 40px;
 }
 
-.btn:hover,:not(.btn-check)+.btn:active, .btn:focus-visible {
+.button-search:hover,:not(.btn-check)+.button-search:active, .button-search:focus-visible {
     background-color: #EEEEEE;
     border: 1px solid #ced4da;
 }
