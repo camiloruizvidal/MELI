@@ -23,9 +23,9 @@ export default class ItemsController {
                                     : 0;
 
             const itemDetail: IResponseDetail = {
-                author: {// TODO No found data in API
-                    name: 'TODO name',
-                    lastname: 'TODO lastname'
+                author: {
+                    name: 'Camilo',
+                    lastname: 'Ruiz'
                 },
                 item: {
                     id: item.id,
@@ -91,9 +91,9 @@ export default class ItemsController {
             }
 
             const search: IResponseSearch = {
-                author: {// TODO No found data in API
-                    name: 'TODO name',
-                    lastname: 'TODO lastname'
+                author: {
+                    name: 'Camilo',
+                    lastname: 'Ruiz'
                 },
                 categories: category,
                 items: resultItems
